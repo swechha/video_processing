@@ -11,7 +11,7 @@ PImage img;
 void setup()
 {
   size(320, 240);
-  newMovie = new Movie(this, "Wildlife.wmv");
+  newMovie = new Movie(this, "wildlife.mp4");
   newMovie.frameRate(2);
   newMovie.play();
 }
@@ -50,7 +50,7 @@ void draw()
         
         float diff = dist(red(thisFrame), green(thisFrame), blue(thisFrame), red(prevFrame), green(prevFrame), blue(prevFrame));
         
-        if(diff > 30)
+        if(diff > 40)
           difference.pixels[index]=color(255);
         else
           difference.pixels[index]=color(0);
@@ -58,7 +58,7 @@ void draw()
       }
     }
     
-    if(flag == 30) {
+    if(flag == 2) {
       reference = createImage(difference.width, difference.height, difference.format);
       reference = difference;
       src = reference;
